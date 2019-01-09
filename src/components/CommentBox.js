@@ -10,7 +10,7 @@ class CommentBox extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.saveComment(this.state)
+        this.props.saveComment(this.state.comment)
         this.setState({ comment: '' })
     }
     handleChange = (event) => {
@@ -31,6 +31,7 @@ class CommentBox extends Component {
                     </div>
 
                 </form>
+                <button onClick={this.props.fetchComments}>Fetch Comments</button>
             </div>
         );
     }
